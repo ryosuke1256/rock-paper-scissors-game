@@ -9,8 +9,8 @@ namespace Source {
       Console.WriteLine("1. Rock, 2. Paper, 3. Scissors");
       Console.Write("Your choice is : ");
       var input = Console.ReadLine();
-      if(!int.TryParse(input, out int choice)) {
-        throw new Exception("Invalid input. Please enter a number");
+      if(!int.TryParse(input, out int choice) || !(1 <= choice && choice <= 3)) {
+        throw new InvalidOperationException("Invalid input. Please enter a valid number (1, 2, or 3).");
       }
       var game = new RockPaperScissorsGame();
       game.GenerateRandomChoice();
