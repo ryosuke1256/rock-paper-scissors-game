@@ -15,7 +15,7 @@ namespace Source {
       var game = new RockPaperScissorsGame();
       game.GenerateRandomChoice();
       Result result = game.Judge(userChoice: choice - 1);
-      DisplayResult(result: result, opponentChoice: game.getChoice() + 1);
+      DisplayResult(result: result, opponentChoice: game.GetChoice() + 1);
     }
 
     private static void DisplayResult(Result result, int opponentChoice) {
@@ -52,7 +52,7 @@ namespace Source {
       _choice = _random.Next(0,3);
     }
 
-    public int getChoice() {
+    public int GetChoice() {
       if(_choice == null) throw new InvalidOperationException("Opponent choice is null");
       return (int) _choice;
     }
